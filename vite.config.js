@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
 
-  // GitHub Pages serves this project from:
-  // /react-portfolio/
-  base: "/react-portfolio/",
-});
+  // GitHub Pages needs the repository name in the path.
+  // Vercel uses the website root.
+  base: mode === "github" ? "/react-portfolio/" : "/",
+}));
