@@ -6,7 +6,7 @@ function Skills() {
         <p className="skills-intro">WHAT I WORK WITH</p>
 
         <h1>My Skills</h1>
-
+<br/>
         <p className="skills-description">
           These are the technologies and tools I use to build responsive,
           user-friendly web applications.

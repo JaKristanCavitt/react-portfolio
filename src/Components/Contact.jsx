@@ -11,7 +11,7 @@ function Contact() {
         I'm always open to new opportunities, collaborations,
         and connecting with other developers.
       </p>
-      
+
       <form className="contact-form">
 
   <label htmlFor="name">Name</label>
@@ -55,7 +55,7 @@ function Contact() {
 
         <p>
           <strong>Email:</strong><br />
-          youremail@email.com
+          jakristan.cavitt@gmail.com
         </p>
 
         <p>
