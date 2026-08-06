@@ -47,7 +47,7 @@ function Contact() {
 
 </form>
 
-    
+    <br></br>
 
       <div className="contact-card">
 
@@ -71,7 +71,9 @@ function Contact() {
 
         <p>
           <strong>LinkedIn:</strong><br />
-          Coming Soon
+         <a href="https://www.linkedin.com/in/jakristan-cavitt-a1970b219" target="_blank" rel="noreferrer">
+            linkedin.com/in/jakristan-cavitt-a1970b219
+          </a>
         </p>
 
     

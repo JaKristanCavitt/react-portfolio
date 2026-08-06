@@ -1,689 +1,1672 @@
+/* =====================================
+   GLOBAL COLOR VARIABLES
+===================================== */
+
+:root {
+  --text: #d1d5db; /* Main text color */
+  --text-heading: #f3f4f6; /* Heading text color */
+  --background: #020611; /* Main dark background */
+  --border: rgba(56, 189, 248, 0.25); /* Transparent blue border */
+  --blue: #38bdf8; /* Main light blue */
+  --bright-blue: #1e90ff; /* Brighter blue for buttons */
+  --dark-blue: #020611; /* Very dark blue */
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif; /* Main font */
+
+  font-family: var(--sans); /* Uses the font stored above */
+  font-size: 18px; /* Default text size */
+  line-height: 1.45; /* Space between lines of text */
+
+  color: var(--text); /* Default text color */
+  background: var(--background); /* Default background */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility; /* Improves text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =====================================
+   REMOVE DEFAULT BROWSER SPACING
+===================================== */
+
+* {
+  margin: 0; /* Removes default outside spacing */
+  padding: 0; /* Removes default inside spacing */
+
+  box-sizing: border-box;
+  /* Makes width include padding and borders */
+}
+
+html,
+body,
+#root {
+  width: 100%; /* Takes up the full browser width */
+  min-height: 100%; /* Allows page to fill browser height */
+}
+
 body {
-  /* background-color: #0C1E72; */
-  /* color: white; */
-/* ================================
-   HERO SECTION
-   This is the main section of my
-   portfolio that fills the screen.
-================================ */
+  margin: 0; /* Removes browser's default body margin */
+
+  background-color: var(--dark-blue); /* Dark blue background */
+
+  color: white; /* Default body text is white */
+}
+
+
+/* =====================================
+   ROOT REACT CONTAINER
+===================================== */
+
+#root {
+  width: 100%; /* Full width */
+
+  min-height: 100vh;
+  /* 100vh = full height of the browser screen */
+
+  display: flex; /* Turns root into a Flexbox container */
+
+  flex-direction: column;
+  /* Stacks children vertically instead of horizontally */
+
+  text-align: center; /* Centers text by default */
+}
+
+
+/* =====================================
+   ENTIRE WEBSITE BACKGROUND
+===================================== */
 
 .app {
+  min-height: 100vh; /* Website fills at least one full screen */
 
-  /* Makes the hero section take up
-     the full height of the browser */
-  min-height: 100vh;
-
-  /* Adds a dark transparent layer
-     over the image so white text
-     is easier to read */
   background:
-  linear-gradient(
-  to bottom,
-  rgba(0,0,0,.90) 0%,
-  rgba(0,0,0,.55) 18%,
-  rgba(0,0,0,0) 35%
-  
-),
-linear-gradient(
-  rgba(5,10,30,.55),
-  rgba(5,10,30,.01)
-  
-),
-
-
-
-   
-
-    /* Loads the background image
-       from the assets folder */
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.55) 18%,
+      rgba(0, 0, 0, 0) 35%
+    ),
+    linear-gradient(
+      rgba(5, 10, 30, 0.55),
+      rgba(5, 10, 30, 0.01)
+    ),
     url("./assets/Background_ps3.jpeg");
+  /* Uses two dark gradients over the background image
+     so the text is easier to read */
 
-    box-shadow: 0 0 25px rgba(0, 170, 255, 0.55); /* Adds a soft blue glow around the image.
-                                                     The first two 0 values mean the shadow
-                                                      does not move left, right, up, or down.
-
-                                                      25px controls how blurry the glow is.
-
-                                                      rgba controls the glow color and opacity.
-                                                    */
-
-  /* Makes the image cover the
-     entire hero section */
   background-size: cover;
+  /* Makes the image cover the available area */
 
-  /* Keeps the image centered */
   background-position: center;
+  /* Keeps the center of the image visible */
 
-  /* Prevents the image from repeating */
   background-repeat: no-repeat;
+  /* Stops the background image from repeating */
+
+  background-attachment: fixed;
+  /* Keeps the background in place while scrolling */
+
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.55);
+  /* Adds a blue glow */
+}
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+.dark-mode {
+  background: #050816;
+
+  /* This removes my PS3 background
+     and replaces it with a dark color. */
+}
 
 
-  
-}}
+
 
 
 
 /* =====================================
-   HERO CONTENT
-   Holds everything inside the hero.
+   DARK MODE BUTTON
 ===================================== */
 
-.hero {
+.dark-mode-button {
+  background: transparent;
+  /* Keeps the button background clear */
 
-  /* Flexbox places child elements
-     next to each other instead of
-     stacking them vertically. */
-  display: flex;
-}
+  color: #38bdf8;
+  /* Makes the words light blue */
 
-:root {
-  --text: #6b6375;
-  --text-h: #15a1c4;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  border: 1px solid #38bdf8;
+  /* Gives the button a blue outline */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  border-radius: 20px;
+  /* Makes the button rounded */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 8px 15px;
+  /* Adds space inside the button */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
+  font-size: 14px;
+  /* Controls the size of the words */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+  font-weight: 600;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+  cursor: pointer;
+  /* Shows the hand when I hover over the button */
 
-body {
+  transition: 0.3s ease;
+  /* Makes the hover effect smoother */
+
+   transform: translateX(-42px);
+  /* Moves only my Dark Mode button to the right */
+
   
-  padding: 0;
-  background-color: #0f172a;
-  color: white;
-
-
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+
+/* Changes the button when I hover over it */
+.dark-mode-button:hover {
+  background: #38bdf8;
+
+  color: #050816;
+
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+  /* Gives the button a blue glow */
 }
+
+
+/* =====================================
+   GENERAL TEXT
+===================================== */
 
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h2,
+h3 {
+  font-family: var(--sans); /* Uses the main website font */
+
+  color: var(--text-heading); /* Heading color */
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  margin: 0; /* Removes default paragraph margin */
 }
 
 
+/* =====================================
+   NAVIGATION BAR
+===================================== */
 
 .navbar {
+  width: 100%; /* Navbar stretches across the screen */
+  height: 110px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
- background: #020611;
+  /* Places navbar children in a row */
 
+  justify-content: space-between;
+  /* Pushes the brand left and links right */
+
+  align-items: center;
+  /* Vertically centers navbar items */
+
+  padding: 0px 70px;
+  /* 18px = top/bottom
+     55px = left/right */
+
+  background: rgba(2, 6, 17, 0.92);
+  /* Dark slightly transparent navbar */
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  /* Blurs the background behind the navbar */
+
+  border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+  /* Thin blue line under navbar */
+
+  box-shadow:
+    0 5px 25px rgba(0, 162, 255, 0.15),
+    0 0 18px rgba(0, 170, 255, 0.12);
+  /* Creates a subtle blue glow */
+
+  position: sticky;
+  /* Navbar stays visible while scrolling */
+
+  top: 0;
+  /* Keeps sticky navbar against top of screen */
+
+  z-index: 1000;
+  /* Keeps navbar above other elements */
 
   
 }
+
+
+/* =====================================
+   NAVBAR BRAND
+===================================== */
+
+.nav-brand {
+  display: flex; /* Turns brand into Flexbox */
+
+  flex-direction: column;
+  /* Places name above job title */
+
+  align-items: flex-start;
+  /* Aligns brand content to the left */
+
+  text-align: left;
+    z-index: 2;
+
+}
+
+.nav-brand h2 {
+  margin: 0;
+
+  color: #38bdf8; /* Blue name */
+
+  font-size: 2rem;
+  /* 1.5 times the default font size */
+
+  font-weight: 600; /* Makes text semi-bold */
+}
+
+.nav-brand p {
+  margin-top: 2px;
+
+  color: #b8c4d8;
+
+  font-size: 0.85rem; /* Smaller subtitle */
+}
+
+
+/* =====================================
+   NAVIGATION LINKS
+===================================== */
 
 .nav-links {
   display: flex;
+  /* Places links next to each other */
+
+  align-items: center; /* Vertically centers links */
+
+  gap: 55px;
+  /* Adds 38px between each navigation link */
+
+    position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);         /* Centers the navigation links horizontally in the middle of the page */
+ 
+  margin: 0;
+  padding: 0;
+
   list-style: none;
-  gap: 30px;
+  /* Removes bullet points */
+}
+
+.nav-links li {
+  list-style: none; /* Removes list bullets */
 }
 
 .nav-links a {
-  color: white;              /* // Set the links text color to white */
+  position: relative;
+  /* Allows underline to position itself
+     relative to each link */
+
+  color: white;
+
   text-decoration: none;
-  font-size: 18px;
+  /* Removes normal link underline */
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+  /* Makes hover effects happen smoothly */
 }
 
 .nav-links a:hover {
-  color: #38bdf8;    /* // Change the color on hover on links */ 
+  color: #38bdf8; /* Changes link blue when hovered */
+
+  text-shadow:
+    0 0 8px rgba(56, 189, 248, 0.8),
+    0 0 16px rgba(56, 189, 248, 0.4);
+  /* Adds glowing text on hover */
+}
+
+
+/* =====================================
+   NAVIGATION UNDERLINE
+===================================== */
+
+.nav-links a::after {
+  content: "";
+  /* Creates an empty element used as the underline */
+
+  position: absolute;
+
+  left: 50%; /* Starts underline from center */
+
+  bottom: -9px;
+  /* Moves underline underneath text */
+
+  width: 0;
+  /* Starts invisible */
+
+  height: 2px; /* Thickness of underline */
+
+  background: #38bdf8;
+
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.9);
+  /* Makes underline glow */
+
+  transform: translateX(-50%);
+  /* Centers underline under link */
+
+  transition: width 0.3s ease;
+  /* Makes underline grow smoothly */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  /* Expands underline when mouse is over link */
+}
+
+
+/* =====================================
+   HOME HERO SECTION
+===================================== */
+
+.home {
+  width: 100%; /* Home page fills available width */
 }
 
 .hero {
-  margin-top: 0;
-  padding-top: 0;
-  gap: 60px;              /* Adds space between the text section and the image.
-                          This keeps both sides separated without pushing
-                          them too far apart. */
-
-
-}
-
-img {
-  width: 300px;
-  border-radius: 15px;
-}
-
-img {
-  width: 30rem;
-  height: 30rem;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* Removes default browser spacing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Makes the page fill the browser */
-html,
-body,
-#root {
   width: 100%;
-  min-height: 100%;
+
+  min-height: calc(100vh - 90px);
+  /* Full screen height minus navbar */
+
+  display: flex;
+  /* Places hero text and image side-by-side */
+
+  align-items: center;
+  /* Vertically centers text and image */
+
+  justify-content: space-between;
+  /* Adds space between text and image */
+
+  gap: 60px;
+  /* Controls space between text and image */
+
+  padding: 60px 7%;
+  /* Adds space inside hero section */
 }
 
-/* Removes the white edge around the website */
-body {
-  margin: 0;
-  background-color: #020611;
-}
+
+/* =====================================
+   HERO TEXT
+===================================== */
 
 .hero-text {
+  flex: 1;
+  /* Allows text section to use available space */
 
-  /* Moves this box to the vertical center
-     of the Flexbox container. */
-  align-self: center;
+  max-width: 720px;
+  /* Prevents text from getting too wide */
 
-    margin-left: 100px; /* Why?
-       Adds space between the profile picture
-       and the text so they don't look crowded.
+  text-align: center;
 
-       Without this:
-       [PHOTO][TEXT]
-
-       With this:
-       [PHOTO]      [TEXT]
-
-       Interview explanation:
-       "I added left margin to create whitespace,
-       which improves readability and makes the
-       layout feel more balanced."
-    */
-max-width: 800px;
- flex: 1;
- transform: translateY(-30px);
-
-/* transform
-   Moves an element without affecting the layout.
-
-   translateY() moves the element up or down.
-
-   Negative values (-) move UP.
-   Positive values (+) move DOWN.
-
-   Examples:
-   translateY(-50px);  // Move up 50px
-   translateY(-20px);  // Move up 20px
-   translateY(0);      // Original position
-   translateY(20px);   // Move down 20px
-   translateY(50px);   // Move down 50px
-
-   Think of it like grabbing the element and
-   sliding it vertically.
-*/
-
+  transform: translateY(-30px);
+  /* Negative Y moves UP
+     Positive Y moves DOWN */
 }
-
-
 
 .hero-intro {
+  margin-bottom: 8px; /* Space underneath intro */
+
+  color: white;
+
   font-size: 1rem;
 
-  /* Keeps the welcome message small so
-     the visitor's eyes naturally go to
-     my name first. This creates a visual
-     hierarchy used on professional websites. */
-} 
-
-.hero-name { font-size: 4rem;
-
-/* Makes my name the main focus of the page.
-   On a portfolio, the visitor should notice
-   the developer's name before reading the
-   smaller descriptive text.
-
-*/
-
-
-
+  font-weight: 400;
 }
 
-.hero-button {
+.hero-name {
+  margin: 5px 0 10px;
+  /* Top = 5px
+     Left/right = 0
+     Bottom = 10px */
 
-    padding: 14px 30px;
+  color: #15a1c4;
 
-    /* Adds space INSIDE the button.
-       14px = top & bottom
-       30px = left & right
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  /* Responsive font:
+     minimum = 2.8rem
+     preferred = 5vw
+     maximum = 4.2rem */
 
-       Without padding:
-       [Text]
+  font-weight: 500;
 
-       With padding:
-       [     Text     ]
+  line-height: 1.1;
+  /* Controls vertical spacing between text lines */
+}
 
-       Padding makes buttons easier to click
-       and gives them a professional look.
-    */
-    background: #0d6efd; 
-    color: white;
+.hero-text h3 {
+  margin-bottom: 3px;
 
-/* Changes the words inside the button to white
-   so they are easier to read against the blue background. */
+  color: white;
 
-border: none;
+  font-size: 1.25rem;
 
-/* Removes the browser's default dark border
-   so the button looks cleaner. */
-  
+  font-weight: 700; /* Bold */
+}
+
+.hero-description {
+  max-width: 680px;
+  /* Stops paragraph from becoming too wide */
+
+  margin: 12px auto 0;
+  /* auto centers the paragraph horizontally */
+
+  color: white;
+
+  font-size: 1rem;
+
+  line-height: 1.5;
+  /* Makes paragraph easier to read */
+}
+
+
+/* =====================================
+   HERO BUTTON CONTAINER
+===================================== */
+
+.hero-buttons {
+  display: flex;
+  /* Places buttons side-by-side */
+
+  justify-content: center;
+  /* Centers buttons horizontally */
+
+  align-items: center;
+
+  gap: 20px;
+  /* Space between buttons */
+
+  margin-top: 25px;
+  /* Space above buttons */
+}
+
+
+/* =====================================
+   PROJECT BUTTON
+===================================== */
+
+.hero-button,
+.project-btn {
+  padding: 14px 28px;
+  /* Makes button larger inside */
+
+  background: #0d6efd;
+
+  color: white;
+
+  border: none;
+  /* Removes default button border */
+
+  border-radius: 8px;
+  /* Rounds corners */
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+  /* Changes mouse to hand when hovering */
+
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.35);
+  /* Adds blue glow */
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  /* Smoothly animates hover changes */
+}
+
+.hero-button:hover,
+.project-btn:hover {
+  background: #0f7ae5;
+
+  transform: translateY(-3px);
+  /* Moves button upward slightly */
+
+  box-shadow:
+    0 0 15px rgba(30, 144, 255, 0.65),
+    0 0 30px rgba(30, 144, 255, 0.35);
+}
+
+
+/* =====================================
+   RESUME BUTTON
+===================================== */
+
+.resume-button,
+.resume-btn {
+  display: inline-flex;
+  /* Flexbox that only takes up needed width */
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px 26px;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  color: #38bdf8;
+
+  border: 2px solid #1e90ff;
+
   border-radius: 8px;
 
-/* Rounds the corners slightly.
-   This gives the button a more modern appearance. */
-  }
+  font-size: 16px;
 
-  .profile-pic{
-    box-shadow: 0 0 25px rgba(0, 162, 255, 0.5);
-    width: 100%;
-     
-  height: 350px;
+  font-weight: 600;
 
-  object-fit: cover;
+  text-decoration: none;
 
-  margin-left: 15rem; /* move image left */
+  cursor: pointer;
 
-  border-radius: 20px;
-
-  
-
-    height:37rem;
-
-    object-fit:cover;
-
-    border-radius:25px;
-
-    box-shadow:0 0 25px rgba(0,140,255,.45);
-     flex: 1;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.resume-button:hover,
+.resume-btn:hover {
+  background: #1e90ff;
+
+  color: white;
+
+  transform: translateY(-3px);
+  /* Moves button upward when hovered */
+
+  box-shadow:
+    0 0 15px rgba(30, 144, 255, 0.65),
+    0 0 30px rgba(30, 144, 255, 0.3);
+}
+
+
+/* =====================================
+   SOCIAL LINKS
+===================================== */
 
 .social-links {
   margin-top: 20px;
+  /* Adds space above social links */
 }
 
 .social-links a {
-  color: #28b6ff;
-  text-decoration: none;
-  font-weight: 600;
   margin: 0 10px;
-  transition: 0.3s;
+  /* Adds horizontal space around links */
+
+  color: #28b6ff;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .social-links a:hover {
   color: white;
+
+  text-shadow: 0 0 12px rgba(40, 182, 255, 0.9);
+  /* Makes link glow */
 }
 
 
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:25px;
-}
-
-.project-btn,
-.resume-btn{
-    padding:14px 28px;
-    border-radius:10px;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.project-btn{
-    background:#1e90ff;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-
-.project-btn:hover{
-    background:#0f7ae5;
-    transform:translateY(-3px);
-}
-
-.resume-btn{
-    border:2px solid #1e90ff;
-    color:#1e90ff;
-    background:transparent;
-}
-
-.resume-btn:hover{
-    background:#1e90ff;
-    color:white;
-    transform:translateY(-3px);
-}
+/* =====================================
+   HERO IMAGE CONTAINER
+===================================== */
 
 .hero-image {
   flex: 1;
-  display: flex;
-  justify-content: center;
-    transform: translateX(-80px);
+  /* Gives image section available flex space */
 
+  display: flex;
+
+  justify-content: center;
+  /* Centers image horizontally */
+
+  align-items: center;
+  /* Centers image vertically */
+
+  transform: translateX(-30px);
+  /* Negative X = LEFT
+     Positive X = RIGHT */
 }
 
-.skills {
-  min-height: 100vh;
 
-  /* Makes the Skills page fill the full screen height. */
+/* =====================================
+   PROFILE PICTURE
+===================================== */
+
+.profile-pic {
+  width: min(100%, 480px);
+  /* Image can shrink but cannot
+     become larger than 480px */
+
+  aspect-ratio: 4 / 5;
+  /* Keeps image in 4:5 portrait shape */
+
+  height: auto;
+  /* Automatically calculates height */
+
+  object-fit: cover;
+  /* Crops instead of stretching image */
+
+  object-position: center;
+  /* Keeps center of image visible */
+
+  border: 1px solid rgba(56, 189, 248, 0.55);
+
+  border-radius: 25px;
+  /* Rounds picture corners */
+
+  box-shadow:
+    0 0 20px rgba(0, 140, 255, 0.45),
+    0 0 45px rgba(0, 140, 255, 0.2);
+  /* Blue glow around picture */
+}
+
+
+/* =====================================
+   SKILLS PAGE
+===================================== */
+
+.skills-page,
+.skills {
+  min-height: calc(100vh - 90px);
+  /* Fills screen underneath navbar */
 
   padding: 80px 60px;
-
-  /* Adds space inside the page:
-     80px on top and bottom
-     60px on left and right
-  */
+  /* Space inside skills page */
 
   color: white;
-
-  /* Makes the text white so it is easy
-     to read on the dark background.
-  */
 }
 
-.contact{
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-
-    padding:60px;
-}
-
-.contact h1{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-.contact-description{
-    max-width:700px;
-    text-align:center;
-    margin-bottom:40px;
-    line-height:1.7;
-}
-
-.contact-card{
-
-    width:100%;
-    max-width:650px;
-
-    padding:40px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(12px);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:0 0 20px rgba(0,162,255,.25);
-}
-
-.contact-card h2{
-    margin-bottom:25px;
-}
-
-.contact-card p{
-    margin-bottom:20px;
-    line-height:1.6;
-}
-
-.contact-card a{
-    color:#39b8ff;
-    text-decoration:none;
-}
-
-.contact-card a:hover{
-    text-decoration:underline;
-}
-
-.contact-form {
-  width: 100%;
-  max-width: 650px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-
-  padding: 35px;
-
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-
-  backdrop-filter: blur(12px);
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 14px;
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-
-  background: rgba(0, 0, 0, 0.35);
-  color: white;
-
-  font-size: 16px;
-}
-
-.contact-form button {
-  margin-top: 12px;
-  padding: 14px;
-
-  border: none;
-  border-radius: 8px;
-
-  background: #1488ff;
-  color: white;
-
-  font-size: 17px;
-  cursor: pointer;
-}
-
-.skills-page {
-  min-height: 100vh;
-  padding: 90px 70px;
-  color: white;
-}
-
-/* Centers the title and description at the top. */
 .skills-header {
   max-width: 750px;
+  /* Prevents header from becoming too wide */
+
   margin: 0 auto 60px;
+  /* auto centers header */
+
   text-align: center;
 }
 
 .skills-intro {
-  color: #38bdf8;
-  font-size: 15px;
-  letter-spacing: 3px;
   margin-bottom: 12px;
+
+  color: #38bdf8;
+
+  font-size: 15px;
+
+  letter-spacing: 3px;
+  /* Adds space between letters */
 }
 
 .skills-header h1 {
-  font-size: 3.5rem;
   margin-bottom: 18px;
+
+  color: white;
+
+  font-size: 3.5rem;
 }
 
 .skills-description {
   color: #d1d5db;
+
   font-size: 18px;
+
   line-height: 1.7;
+  /* Adds comfortable space between lines */
 }
 
-/* Keeps the skill sections from becoming too wide. */
 .skills-container {
   width: 100%;
+
   max-width: 1100px;
+  /* Stops content from becoming too wide */
+
   margin: 0 auto;
+  /* Centers container */
 }
 
 .skill-category {
   margin-bottom: 55px;
+  /* Space between categories */
 }
 
 .skill-category h2 {
   margin-bottom: 22px;
+
   color: #7dd3fc;
+
   font-size: 1.7rem;
+
   text-align: left;
 }
 
-/* Creates responsive columns for the cards. */
 .skills-grid {
   display: grid;
+  /* Uses CSS Grid for skill cards */
+
   grid-template-columns: repeat(3, 1fr);
+  /* Creates 3 equal columns */
+
   gap: 20px;
+  /* Space between cards */
 }
 
 .skill-card {
   padding: 24px;
+
+  color: white;
+
   text-align: center;
 
   background: rgba(255, 255, 255, 0.06);
+  /* Transparent card background */
+
   border: 1px solid rgba(56, 189, 248, 0.3);
+
   border-radius: 14px;
 
   font-size: 18px;
+
   font-weight: 600;
 
   box-shadow: 0 0 18px rgba(0, 162, 255, 0.12);
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Glass effect */
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
+  border-color: rgba(56, 189, 248, 0.75);
+
   transform: translateY(-6px);
+  /* Moves card upward */
 
   box-shadow:
     0 0 18px rgba(0, 162, 255, 0.35),
     0 0 35px rgba(0, 102, 255, 0.18);
 }
 
-/* Changes the grid for tablets and phones. */
+
+/* =====================================
+   CONTACT PAGE
+===================================== */
+
+.contact {
+  min-height: calc(100vh - 90px);
+
+  display: flex;
+
+  flex-direction: column;
+  /* Stacks contact content vertically */
+
+  justify-content: center;
+  /* Centers vertically */
+
+  align-items: center;
+  /* Centers horizontally */
+
+  padding: 60px;
+
+  color: white;
+}
+
+.contact h1 {
+  margin-bottom: 20px;
+
+  color: white;
+
+  font-size: 3rem;
+}
+
+.contact-description {
+  max-width: 700px;
+
+  margin-bottom: 40px;
+
+  color: #d1d5db;
+
+  text-align: center;
+
+  line-height: 1.7;
+}
+
+.contact-card {
+  width: 100%;
+
+  max-width: 650px;
+  /* Limits card width */
+
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 20px;
+
+  box-shadow: 0 0 20px rgba(0, 162, 255, 0.25);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Creates frosted glass effect */
+}
+
+.contact-card h2 {
+  margin-bottom: 25px;
+
+  color: #7dd3fc;
+}
+
+.contact-card p {
+  margin-bottom: 20px;
+
+  line-height: 1.6;
+}
+
+.contact-card a {
+  color: #39b8ff;
+
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+  /* Adds underline when hovered */
+}
+
+
+/* =====================================
+   CONTACT FORM
+===================================== */
+
+.contact-form {
+  width: 100%;
+
+  max-width: 650px;
+
+  display: flex;
+
+  flex-direction: column;
+  /* Stacks inputs vertically */
+
+  gap: 12px;
+  /* Space between form elements */
+
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.contact-form label {
+  color: white;
+
+  text-align: left;
+
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+
+  padding: 14px;
+  /* Adds space inside input fields */
+
+  background: rgba(0, 0, 0, 0.35);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  /* Uses same font as website */
+
+  font-size: 16px;
+
+  outline: none;
+  /* Removes browser's default focus outline */
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #38bdf8;
+  /* Blue border when user clicks input */
+
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  /* User can resize vertically but not sideways */
+}
+
+.contact-form button {
+  margin-top: 12px;
+
+  padding: 14px;
+
+  background: #1488ff;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #0f7ae5;
+
+  transform: translateY(-2px);
+  /* Slightly lifts button */
+
+  box-shadow: 0 0 18px rgba(20, 136, 255, 0.55);
+}
+
+
+/* =====================================
+   TABLET RESPONSIVENESS
+===================================== */
+
+@media (max-width: 1000px) {
+  /*
+    Everything inside here activates when
+    the screen becomes 1000px or smaller.
+  */
+
+  .navbar {
+    padding: 18px 30px;
+    /* Reduces navbar side spacing */
+  }
+
+  .nav-links {
+    gap: 24px;
+    /* Brings navigation links closer */
+  }
+
+  .hero {
+    gap: 35px;
+
+    padding: 50px 35px;
+  }
+
+  .hero-text {
+    transform: none;
+    /* Removes manual vertical movement */
+  }
+
+  .hero-image {
+    transform: none;
+    /* Removes manual horizontal movement */
+  }
+
+  .profile-pic {
+    width: min(100%, 400px);
+    /* Makes image smaller on tablets */
+  }
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
 @media (max-width: 800px) {
-  .skills-page {
+
+  .navbar {
+    flex-direction: column;
+    /* Changes navbar from horizontal
+       to vertical */
+
+    gap: 18px;
+
+    padding: 18px 24px;
+  }
+
+  .nav-brand {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    /* Allows links to move to another
+       line if there isn't enough room */
+
+    justify-content: center;
+
+    gap: 18px 28px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .hero {
+    flex-direction: column;
+    /* Changes:
+       TEXT | IMAGE
+
+       into:
+
+       TEXT
+       IMAGE
+    */
+
+    min-height: auto;
+
+    padding: 65px 24px;
+
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 700px;
+
+    order: 1;
+    /* Makes text appear first */
+
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100%;
+
+    order: 2;
+    /* Makes image appear second */
+  }
+
+  .profile-pic {
+    width: min(100%, 380px);
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+    /* Lets buttons move onto another row */
+  }
+
+  .skills-page,
+  .skills {
     padding: 70px 24px;
   }
 
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    /* Changes skills from 3 columns to 2 */
   }
 
   .skills-header h1 {
     font-size: 2.7rem;
   }
+
+  .contact {
+    padding: 70px 24px;
+  }
 }
 
+
+/* =====================================
+   SMALL MOBILE RESPONSIVENESS
+===================================== */
+
 @media (max-width: 500px) {
+
+  .nav-links {
+    gap: 14px 20px;
+  }
+
+  .hero-name {
+    font-size: 2.6rem;
+    /* Makes name smaller on phones */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    /* Stacks buttons vertically */
+  }
+
+  .hero-button,
+  .project-btn,
+  .resume-button,
+  .resume-btn {
+    width: 100%;
+    /* Makes buttons fill available width */
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
+    /* Changes skill cards to one column */
+  }
+
+  .contact-card,
+  .contact-form {
+    padding: 25px 20px;
+    /* Reduces spacing on small screens */
+  }
+}
+
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  transition: .3s;
+}
+
+/* Makes all navbar icons the same size */
+.nav-links svg {
+  font-size: 20px;
+
+  color: #38bdf8;
+}
+
+
+.availability {
+
+  display: flex;
+  /* Places the dot and text side by side */
+
+  align-items: center;
+  /* Vertically centers the dot */
+
+  gap: 10px;
+  /* Space between the dot and the text */
+
+  color: white;
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+.status-dot {
+
+  width: 14px;
+  /* Width of the blue dot */
+
+  height: 14px;
+  /* Height of the blue dot */
+
+  background: #0B6FFD;
+  /* Blue color */
+
+  border-radius: 50%;
+  /* Makes it a perfect circle */
+
+  box-shadow:
+    0 0 8px #0B6FFD,
+    0 0 16px #0B6FFD;
+  /* Adds a glowing effect */
+}
+
+
+/* =====================================
+   SOCIAL SIDEBAR
+===================================== */
+
+.social-sidebar {
+  position: fixed; /* Keeps the sidebar visible while scrolling */
+
+  left: .15rem; /* Distance from the left side of the screen */
+
+  top: 28rem; /* Moves the sidebar halfway down the screen */
+
+  transform: translateY(-50%);
+  /* Pulls it upward by half its own height
+     so it is perfectly centered vertically */
+
+  display: flex; /* Uses Flexbox */
+
+  flex-direction: column;
+  /* Stacks the social icons vertically */
+
+  gap: 22px; /* Space between each icon */
+
+  padding: 18px 12px;
+
+  background: rgba(2, 6, 17, 0.72);
+  /* Dark transparent background */
+
+  border: 1px solid rgba(56, 189, 248, 0.25);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(12px);
+  /* Creates the glass effect */
+
+  box-shadow: 0 0 22px rgba(0, 162, 255, 0.2);
+  /* Adds a soft blue glow */
+
+  z-index: 900;
+  /* Keeps the sidebar above the page content */
+}
+
+
+.ps-logo {
+  color: #38bdf8; /* Light blue */
+
+  font-size: 50px; /* Makes the logo bigger */
+
+  margin-right: 19px; /* Space between logo and your name */
+
+  filter: drop-shadow(0 0 10px #38bdf8);
+  /* Adds a glowing effect */
+
+  vertical-align: -13px;
+  /* Lines the icon up with the text */
+
+    color: #7dd3fc;
+
+  filter:
+    drop-shadow(0 0 8px #38bdf8)
+    drop-shadow(0 0 18px #38bdf8)  /* Makes a glowing effect */
+    drop-shadow(0 0 28px #38bdf8);
+}
+
+
+/* ===============================
+   QUICK LINKS SECTION
+================================ */
+
+.quick-links{
+
+    display:flex; /* Places cards in a row */
+
+    justify-content:center; /* Centers the cards */
+
+    gap:30px; /* Space between cards */
+
+    padding:80px 7%;
+
+    flex-wrap:wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.quick-card{
+
+    width:240px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(56,189,248,.25);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s ease;
+}
+
+.quick-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 0 20px rgba(56,189,248,.35);
+}
+
+.quick-card h2{
+
+    font-size:2.5rem;
+
+    color:#38bdf8;
+}
+
+.quick-card h3{
+
+    margin:15px 0;
+}
+
+.quick-card p{
+
+    color:#d1d5db;
+}
+
+.quick-icon{
+    font-size:3rem;          /* Makes the icon large */
+
+    color:#38bdf8;           /* Light blue */
+
+    margin-bottom:20px;      /* Space below the icon */
+
+    filter:drop-shadow(0 0 10px #38bdf8);
+    /* Gives the icon a blue glow */
+}
+
+
+
+/* =====================================
+   PROJECTS PAGE
+===================================== */
+
+.projects-page {
+  min-height: calc(100vh - 110px); /* Fills the screen below the navbar */
+
+  padding: 70px 7%;
+
+  color: white;
+}
+
+.projects-page h1 {
+  margin-bottom: 45px;
+
+  font-size: 3rem;
+
+  text-align: center;
+}
+
+
+/* Holds all project cards */
+.projects-container {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid; /* Creates organized columns */
+
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates three equal columns */
+
+  gap: 25px;
+}
+
+
+/* Individual project card */
+.project-card {
+  min-height: 210px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  text-align: left;
+
+  background: rgba(8, 18, 55, 0.72);
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+
+  box-shadow: 0 0 18px rgba(0, 162, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Project title */
+.project-card h2 {
+  margin-bottom: 14px;
+
+  color: white;
+
+  font-size: 1.35rem;
+}
+
+
+/* Project description */
+.project-card p {
+  margin-bottom: 25px;
+
+  color: #cbd5e1;
+
+  line-height: 1.6;
+}
+
+
+/* GitHub link */
+.project-card a {
+  margin-top: auto;
+  /* Pushes the link to the bottom of the card */
+
+  padding-top: 18px;
+
+  color: #38bdf8;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+/* Card hover effect */
+.project-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.35),
+    0 0 40px rgba(0, 102, 255, 0.15);
+}
+
+
+/* GitHub link hover */
+.project-card a:hover {
+  color: white;
+
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.9);
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* Changes from three columns to two */
+  }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+  .projects-page {
+    padding: 60px 24px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    /* Shows one project card per row */
+  }
+
+  .projects-page h1 {
+    font-size: 2.4rem;
+  }
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 800px) {
+
+  /* Stacks the navbar instead of keeping everything in one row */
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 20px;
+  }
+
+  /* Centers my name and job title */
+  .nav-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Lets the navigation links move onto another line */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 24px;
+  }
+
+  /* Makes the navigation links slightly smaller */
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  /* Keeps the dark-mode button from being manually shifted on mobile */
+  .dark-mode-button {
+    transform: none;
+  }
+
+  /* Stacks the hero text and photo */
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+    gap: 40px;
+    padding: 55px 24px;
+  }
+
+  /* Keeps the text centered and removes desktop movement */
+  .hero-text {
+    order: 1;
+    max-width: 100%;
+    transform: none;
+    text-align: center;
+  }
+
+  /* Places the image underneath the text */
+  .hero-image {
+    order: 2;
+    width: 100%;
+    transform: none;
+  }
+
+  /* Makes the profile picture fit smaller screens */
+  .profile-pic {
+    width: min(100%, 360px);
+  }
+
+  /* Lets the hero buttons wrap when needed */
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  /* Changes the quick-link cards to two columns */
+  .quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 50px 24px;
+  }
+
+  .quick-card {
+    width: 100%;
+  }
+
+  /* Changes project cards to two columns */
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Changes skills cards to two columns */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reduces spacing around the other pages */
+  .skills-page,
+  .projects-page,
+  .contact {
+    padding: 60px 24px;
+  }
+
+  /* Hides the fixed sidebar so it does not cover mobile content */
+  .social-sidebar {
+    display: none;
   }
 }
