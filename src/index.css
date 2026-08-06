@@ -3,25 +3,39 @@
 ===================================== */
 
 :root {
-  --text: #d1d5db; /* Main text color */
-  --text-heading: #f3f4f6; /* Heading text color */
-  --background: #020611; /* Main dark background */
-  --border: rgba(56, 189, 248, 0.25); /* Transparent blue border */
-  --blue: #38bdf8; /* Main light blue */
-  --bright-blue: #1e90ff; /* Brighter blue for buttons */
-  --dark-blue: #020611; /* Very dark blue */
+  --text: #d1d5db;
+  /* Main text color */
+  --text-heading: #f3f4f6;
+  /* Heading text color */
+  --background: #020611;
+  /* Main dark background */
+  --border: rgba(56, 189, 248, 0.25);
+  /* Transparent blue border */
+  --blue: #38bdf8;
+  /* Main light blue */
+  --bright-blue: #1e90ff;
+  /* Brighter blue for buttons */
+  --dark-blue: #020611;
+  /* Very dark blue */
 
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif; /* Main font */
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  /* Main font */
 
-  font-family: var(--sans); /* Uses the font stored above */
-  font-size: 18px; /* Default text size */
-  line-height: 1.45; /* Space between lines of text */
+  font-family: var(--sans);
+  /* Uses the font stored above */
+  font-size: 18px;
+  /* Default text size */
+  line-height: 1.45;
+  /* Space between lines of text */
 
-  color: var(--text); /* Default text color */
-  background: var(--background); /* Default background */
+  color: var(--text);
+  /* Default text color */
+  background: var(--background);
+  /* Default background */
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility; /* Improves text rendering */
+  text-rendering: optimizeLegibility;
+  /* Improves text rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,8 +46,10 @@
 ===================================== */
 
 * {
-  margin: 0; /* Removes default outside spacing */
-  padding: 0; /* Removes default inside spacing */
+  margin: 0;
+  /* Removes default outside spacing */
+  padding: 0;
+  /* Removes default inside spacing */
 
   box-sizing: border-box;
   /* Makes width include padding and borders */
@@ -42,16 +58,21 @@
 html,
 body,
 #root {
-  width: 100%; /* Takes up the full browser width */
-  min-height: 100%; /* Allows page to fill browser height */
+  width: 100%;
+  /* Takes up the full browser width */
+  min-height: 100%;
+  /* Allows page to fill browser height */
 }
 
 body {
-  margin: 0; /* Removes browser's default body margin */
+  margin: 0;
+  /* Removes browser's default body margin */
 
-  background-color: var(--dark-blue); /* Dark blue background */
+  background-color: var(--dark-blue);
+  /* Dark blue background */
 
-  color: white; /* Default body text is white */
+  color: white;
+  /* Default body text is white */
 }
 
 
@@ -60,17 +81,20 @@ body {
 ===================================== */
 
 #root {
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
 
   min-height: 100vh;
   /* 100vh = full height of the browser screen */
 
-  display: flex; /* Turns root into a Flexbox container */
+  display: flex;
+  /* Turns root into a Flexbox container */
 
   flex-direction: column;
   /* Stacks children vertically instead of horizontally */
 
-  text-align: center; /* Centers text by default */
+  text-align: center;
+  /* Centers text by default */
 }
 
 
@@ -79,19 +103,16 @@ body {
 ===================================== */
 
 .app {
-  min-height: 100vh; /* Website fills at least one full screen */
+  min-height: 100vh;
+  /* Website fills at least one full screen */
 
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       rgba(0, 0, 0, 0.9) 0%,
       rgba(0, 0, 0, 0.55) 18%,
-      rgba(0, 0, 0, 0) 35%
-    ),
-    linear-gradient(
-      rgba(5, 10, 30, 0.55),
-      rgba(5, 10, 30, 0.01)
-    ),
+      rgba(0, 0, 0, 0) 35%),
+    linear-gradient(rgba(5, 10, 30, 0.55),
+      rgba(5, 10, 30, 0.01)),
     url("./assets/Background_ps3.jpeg");
   /* Uses two dark gradients over the background image
      so the text is easier to read */
@@ -159,10 +180,10 @@ body {
   transition: 0.3s ease;
   /* Makes the hover effect smoother */
 
-   transform: translateX(-42px);
+  transform: translateX(-42px);
   /* Moves only my Dark Mode button to the right */
 
-  
+
 }
 
 
@@ -184,13 +205,16 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--sans); /* Uses the main website font */
+  font-family: var(--sans);
+  /* Uses the main website font */
 
-  color: var(--text-heading); /* Heading color */
+  color: var(--text-heading);
+  /* Heading color */
 }
 
 p {
-  margin: 0; /* Removes default paragraph margin */
+  margin: 0;
+  /* Removes default paragraph margin */
 }
 
 
@@ -199,7 +223,8 @@ p {
 ===================================== */
 
 .navbar {
-  width: 100%; /* Navbar stretches across the screen */
+  width: 100%;
+  /* Navbar stretches across the screen */
   height: 110px;
   display: flex;
   /* Places navbar children in a row */
@@ -238,7 +263,7 @@ p {
   z-index: 1000;
   /* Keeps navbar above other elements */
 
-  
+
 }
 
 
@@ -247,7 +272,8 @@ p {
 ===================================== */
 
 .nav-brand {
-  display: flex; /* Turns brand into Flexbox */
+  display: flex;
+  /* Turns brand into Flexbox */
 
   flex-direction: column;
   /* Places name above job title */
@@ -256,19 +282,21 @@ p {
   /* Aligns brand content to the left */
 
   text-align: left;
-    z-index: 2;
+  z-index: 2;
 
 }
 
 .nav-brand h2 {
   margin: 0;
 
-  color: #38bdf8; /* Blue name */
+  color: #38bdf8;
+  /* Blue name */
 
   font-size: 2rem;
   /* 1.5 times the default font size */
 
-  font-weight: 600; /* Makes text semi-bold */
+  font-weight: 600;
+  /* Makes text semi-bold */
 }
 
 .nav-brand p {
@@ -276,7 +304,8 @@ p {
 
   color: #b8c4d8;
 
-  font-size: 0.85rem; /* Smaller subtitle */
+  font-size: 0.85rem;
+  /* Smaller subtitle */
 }
 
 
@@ -288,16 +317,18 @@ p {
   display: flex;
   /* Places links next to each other */
 
-  align-items: center; /* Vertically centers links */
+  align-items: center;
+  /* Vertically centers links */
 
   gap: 55px;
   /* Adds 38px between each navigation link */
 
-    position: absolute;
+  position: absolute;
 
   left: 50%;
-  transform: translateX(-50%);         /* Centers the navigation links horizontally in the middle of the page */
- 
+  transform: translateX(-50%);
+  /* Centers the navigation links horizontally in the middle of the page */
+
   margin: 0;
   padding: 0;
 
@@ -306,7 +337,8 @@ p {
 }
 
 .nav-links li {
-  list-style: none; /* Removes list bullets */
+  list-style: none;
+  /* Removes list bullets */
 }
 
 .nav-links a {
@@ -330,7 +362,8 @@ p {
 }
 
 .nav-links a:hover {
-  color: #38bdf8; /* Changes link blue when hovered */
+  color: #38bdf8;
+  /* Changes link blue when hovered */
 
   text-shadow:
     0 0 8px rgba(56, 189, 248, 0.8),
@@ -349,7 +382,8 @@ p {
 
   position: absolute;
 
-  left: 50%; /* Starts underline from center */
+  left: 50%;
+  /* Starts underline from center */
 
   bottom: -9px;
   /* Moves underline underneath text */
@@ -357,7 +391,8 @@ p {
   width: 0;
   /* Starts invisible */
 
-  height: 2px; /* Thickness of underline */
+  height: 2px;
+  /* Thickness of underline */
 
   background: #38bdf8;
 
@@ -382,7 +417,8 @@ p {
 ===================================== */
 
 .home {
-  width: 100%; /* Home page fills available width */
+  width: 100%;
+  /* Home page fills available width */
 }
 
 .hero {
@@ -427,7 +463,8 @@ p {
 }
 
 .hero-intro {
-  margin-bottom: 8px; /* Space underneath intro */
+  margin-bottom: 8px;
+  /* Space underneath intro */
 
   color: white;
 
@@ -463,7 +500,8 @@ p {
 
   font-size: 1.25rem;
 
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  /* Bold */
 }
 
 .hero-description {
@@ -1275,22 +1313,27 @@ p {
 ===================================== */
 
 .social-sidebar {
-  position: fixed; /* Keeps the sidebar visible while scrolling */
+  position: fixed;
+  /* Keeps the sidebar visible while scrolling */
 
-  left: .15rem; /* Distance from the left side of the screen */
+  left: .15rem;
+  /* Distance from the left side of the screen */
 
-  top: 28rem; /* Moves the sidebar halfway down the screen */
+  top: 28rem;
+  /* Moves the sidebar halfway down the screen */
 
   transform: translateY(-50%);
   /* Pulls it upward by half its own height
      so it is perfectly centered vertically */
 
-  display: flex; /* Uses Flexbox */
+  display: flex;
+  /* Uses Flexbox */
 
   flex-direction: column;
   /* Stacks the social icons vertically */
 
-  gap: 22px; /* Space between each icon */
+  gap: 22px;
+  /* Space between each icon */
 
   padding: 18px 12px;
 
@@ -1313,11 +1356,14 @@ p {
 
 
 .ps-logo {
-  color: #38bdf8; /* Light blue */
+  color: #38bdf8;
+  /* Light blue */
 
-  font-size: 50px; /* Makes the logo bigger */
+  font-size: 50px;
+  /* Makes the logo bigger */
 
-  margin-right: 19px; /* Space between logo and your name */
+  margin-right: 19px;
+  /* Space between logo and your name */
 
   filter: drop-shadow(0 0 10px #38bdf8);
   /* Adds a glowing effect */
@@ -1325,11 +1371,11 @@ p {
   vertical-align: -13px;
   /* Lines the icon up with the text */
 
-    color: #7dd3fc;
+  color: #7dd3fc;
 
   filter:
-    drop-shadow(0 0 8px #38bdf8)
-    drop-shadow(0 0 18px #38bdf8)  /* Makes a glowing effect */
+    drop-shadow(0 0 8px #38bdf8) drop-shadow(0 0 18px #38bdf8)
+    /* Makes a glowing effect */
     drop-shadow(0 0 28px #38bdf8);
 }
 
@@ -1338,73 +1384,80 @@ p {
    QUICK LINKS SECTION
 ================================ */
 
-.quick-links{
+.quick-links {
 
-    display:flex; /* Places cards in a row */
+  display: flex;
+  /* Places cards in a row */
 
-    justify-content:center; /* Centers the cards */
+  justify-content: center;
+  /* Centers the cards */
 
-    gap:30px; /* Space between cards */
+  gap: 30px;
+  /* Space between cards */
 
-    padding:80px 7%;
+  padding: 80px 7%;
 
-    flex-wrap:wrap; /* Allows cards to wrap on smaller screens */
+  flex-wrap: wrap;
+  /* Allows cards to wrap on smaller screens */
 }
 
-.quick-card{
+.quick-card {
 
-    width:240px;
+  width: 240px;
 
-    padding:30px;
+  padding: 30px;
 
-    text-align:center;
+  text-align: center;
 
-    background:rgba(255,255,255,.05);
+  background: rgba(255, 255, 255, .05);
 
-    border:1px solid rgba(56,189,248,.25);
+  border: 1px solid rgba(56, 189, 248, .25);
 
-    border-radius:18px;
+  border-radius: 18px;
 
-    backdrop-filter:blur(10px);
+  backdrop-filter: blur(10px);
 
-    transition:.3s ease;
+  transition: .3s ease;
 }
 
-.quick-card:hover{
+.quick-card:hover {
 
-    transform:translateY(-8px);
+  transform: translateY(-8px);
 
-    border-color:#38bdf8;
+  border-color: #38bdf8;
 
-    box-shadow:0 0 20px rgba(56,189,248,.35);
+  box-shadow: 0 0 20px rgba(56, 189, 248, .35);
 }
 
-.quick-card h2{
+.quick-card h2 {
 
-    font-size:2.5rem;
+  font-size: 2.5rem;
 
-    color:#38bdf8;
+  color: #38bdf8;
 }
 
-.quick-card h3{
+.quick-card h3 {
 
-    margin:15px 0;
+  margin: 15px 0;
 }
 
-.quick-card p{
+.quick-card p {
 
-    color:#d1d5db;
+  color: #d1d5db;
 }
 
-.quick-icon{
-    font-size:3rem;          /* Makes the icon large */
+.quick-icon {
+  font-size: 3rem;
+  /* Makes the icon large */
 
-    color:#38bdf8;           /* Light blue */
+  color: #38bdf8;
+  /* Light blue */
 
-    margin-bottom:20px;      /* Space below the icon */
+  margin-bottom: 20px;
+  /* Space below the icon */
 
-    filter:drop-shadow(0 0 10px #38bdf8);
-    /* Gives the icon a blue glow */
+  filter: drop-shadow(0 0 10px #38bdf8);
+  /* Gives the icon a blue glow */
 }
 
 
@@ -1414,7 +1467,8 @@ p {
 ===================================== */
 
 .projects-page {
-  min-height: calc(100vh - 110px); /* Fills the screen below the navbar */
+  min-height: calc(100vh - 110px);
+  /* Fills the screen below the navbar */
 
   padding: 70px 7%;
 
@@ -1437,7 +1491,8 @@ p {
 
   margin: 0 auto;
 
-  display: grid; /* Creates organized columns */
+  display: grid;
+  /* Creates organized columns */
 
   grid-template-columns: repeat(3, 1fr);
   /* Creates three equal columns */
@@ -1546,100 +1601,165 @@ p {
   }
 }
 
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 600px) {
-  .projects-page {
-    padding: 60px 24px;
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr;
-    /* Shows one project card per row */
-  }
-
-  .projects-page h1 {
-    font-size: 2.4rem;
-  }
-}
-
-
 /* =====================================
    MOBILE RESPONSIVE DESIGN
 ===================================== */
 
 @media (max-width: 800px) {
 
-  /* Stacks the navbar instead of keeping everything in one row */
+  /* Stacks the navbar sections vertically */
   .navbar {
+    min-height: auto;
+    height: auto;
+
     flex-direction: column;
-    gap: 18px;
-    padding: 18px 20px;
-  }
-
-  /* Centers my name and job title */
-  .nav-brand {
+    justify-content: center;
     align-items: center;
-    text-align: center;
+
+    gap: 18px;
+    padding: 20px 16px;
+
+    position: relative;
   }
 
-  /* Lets the navigation links move onto another line */
+  /* Centers my logo and name */
+  .nav-brand {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    transform: none;
+  }
+
+  /* Allows the links to wrap without overlapping */
   .nav-links {
+    width: 100%;
+
+    position: static;
+    transform: none;
+
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 18px 24px;
+    align-items: center;
+
+    gap: 16px 24px;
+
+    margin: 0;
+    padding: 0;
   }
 
-  /* Makes the navigation links slightly smaller */
+  /* Makes the mobile navigation links smaller */
   .nav-links a {
     font-size: 15px;
   }
 
-  /* Keeps the dark-mode button from being manually shifted on mobile */
+  /* Keeps icons and words lined up */
+  .nav-links svg {
+    font-size: 20px;
+  }
+
+  /* Stops the button from using desktop movement */
   .dark-mode-button {
+    position: static;
     transform: none;
+    margin: 0;
   }
 
-  /* Stacks the hero text and photo */
+  /* Keeps the availability message on its own line */
+  .availability {
+    width: 100%;
+
+    position: static;
+    transform: none;
+
+    justify-content: center;
+
+    margin: 0;
+  }
+
+  /* Stacks the hero text and image */
   .hero {
-    flex-direction: column;
     min-height: auto;
+
+    flex-direction: column;
+
     gap: 40px;
-    padding: 55px 24px;
+    padding: 50px 24px;
   }
 
-  /* Keeps the text centered and removes desktop movement */
+  /* Keeps the text centered */
   .hero-text {
     order: 1;
+
+    width: 100%;
     max-width: 100%;
+
     transform: none;
+
     text-align: center;
   }
 
-  /* Places the image underneath the text */
+  /* Makes my name fit on mobile */
+  .hero-name {
+    font-size: clamp(2.4rem, 11vw, 3.5rem);
+    line-height: 1.05;
+  }
+
+  /* Keeps my paragraph from becoming too wide */
+  .hero-description {
+    width: 100%;
+    max-width: 600px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Stacks the buttons */
+  .hero-buttons {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+  }
+
+  /* Makes both buttons fit the phone screen */
+  .hero-button,
+  .resume-button {
+    width: 100%;
+    max-width: 420px;
+
+    text-align: center;
+  }
+
+  /* Places my image under the text */
   .hero-image {
     order: 2;
+
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+
     transform: none;
   }
 
-  /* Makes the profile picture fit smaller screens */
+  /* Makes my picture responsive */
   .profile-pic {
-    width: min(100%, 360px);
+    width: min(100%, 420px);
+    height: auto;
   }
 
-  /* Lets the hero buttons wrap when needed */
-  .hero-buttons {
-    flex-wrap: wrap;
-  }
-
-  /* Changes the quick-link cards to two columns */
+  /* Shows two quick cards per row */
   .quick-links {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 20px;
     padding: 50px 24px;
   }
@@ -1648,25 +1768,65 @@ p {
     width: 100%;
   }
 
-  /* Changes project cards to two columns */
+  /* Shows one project card per row */
   .projects-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
-  /* Changes skills cards to two columns */
+  /* Shows two skills per row */
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Reduces spacing around the other pages */
+  /* Adds mobile spacing to the other pages */
   .skills-page,
   .projects-page,
   .contact {
     padding: 60px 24px;
   }
 
-  /* Hides the fixed sidebar so it does not cover mobile content */
+  .projects-page h1 {
+    font-size: 2.4rem;
+  }
+
+  /* Hides the social sidebar on phones */
   .social-sidebar {
     display: none;
+  }
+}
+
+
+/* =====================================
+   SMALL PHONES
+===================================== */
+
+@media (max-width: 500px) {
+
+  /* Shows one quick card per row */
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  /* Shows one skill card per row */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Makes the links more compact */
+  .nav-links {
+    gap: 14px 18px;
+  }
+
+  /* Makes the navbar name fit */
+  .nav-brand h2 {
+    font-size: 1.55rem;
+  }
+
+  /* Reduces card padding */
+  .quick-card,
+  .project-card,
+  .contact-card,
+  .contact-form {
+    padding: 24px 20px;
   }
 }
